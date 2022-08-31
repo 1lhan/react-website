@@ -13,7 +13,7 @@
             "msi"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 2,
@@ -29,7 +29,7 @@
             "asus"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 3,
@@ -45,7 +45,7 @@
             "intel"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 4,
@@ -61,7 +61,7 @@
             "amd"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 5,
@@ -77,7 +77,7 @@
             "corsair"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 6,
@@ -93,7 +93,7 @@
             "msi"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 7,
@@ -109,7 +109,7 @@
             "corsair"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 8,
@@ -125,7 +125,7 @@
             "corsair"
         ],
         "filterNumber": 0,
-        "indirim": 20
+        "discount": 20
     },
     {
         "id": 9,
@@ -141,7 +141,7 @@
             "corsair"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 10,
@@ -157,7 +157,7 @@
             "wd"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 11,
@@ -173,7 +173,7 @@
             "cooler master"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 12,
@@ -189,7 +189,7 @@
             "samsung"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 13,
@@ -205,7 +205,7 @@
             "steel series"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     },
     {
         "id": 14,
@@ -221,6 +221,6 @@
             "intel"
         ],
         "filterNumber": 0,
-        "indirim": null
+        "discount": null
     }
 ]
