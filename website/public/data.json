@@ -1,0 +1,226 @@
+[
+    {
+        "id": 1,
+        "title": "MSI Nvdia Geforce RTX 2060",
+        "mprice": 7299.80,
+        "price": 7299.80,
+        "src": "images/rtx2080.png",
+        "type": "gpu",
+        "piece": 1,
+        "brand": "msi",
+        "tags": [
+            "gpu",
+            "msi"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 2,
+        "title": "Nvdia Geforce RTX 3050 8GB",
+        "mprice": 8377.00,
+        "price": 8377.00,
+        "src": "images/asus-rtx-3050.webp",
+        "type": "gpu",
+        "piece": 1,
+        "brand": "asus",
+        "tags": [
+            "gpu",
+            "asus"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 3,
+        "title": "Intel i7 6900K",
+        "mprice": 2099.90,
+        "price": 2099.90,
+        "src": "images/i5.jpg",
+        "type": "processor",
+        "piece": 1,
+        "brand": "intel",
+        "tags": [
+            "processor",
+            "intel"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 4,
+        "title": "AMD Ryzen 5 3600XT",
+        "mprice": 2760.50,
+        "price": 2760.50,
+        "src": "images/ryzen5-3600xt.webp",
+        "type": "processor",
+        "piece": 1,
+        "brand": "amd",
+        "tags": [
+            "processor",
+            "amd"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 5,
+        "title": "Corsair M55 RGB Pro Gaming Mouse",
+        "mprice": 299.90,
+        "price": 299.90,
+        "src": "images/corsair-m55rgbpro.png",
+        "type": "mouse",
+        "piece": 1,
+        "brand": "corsair",
+        "tags": [
+            "mouse",
+            "corsair"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 6,
+        "title": "MSI B450M A PRO Motherboard",
+        "mprice": 875,
+        "price": 875,
+        "src": "images/msi-b450m-apro.webp",
+        "type": "motherboard",
+        "piece": 1,
+        "brand": "msi",
+        "tags": [
+            "motherboard",
+            "msi"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 7,
+        "title": "Corsair 16gb(8x2) 3200Mhz CL16 DDR4 Black Dual Kit Ram",
+        "mprice": 1239.90,
+        "price": 1239.90,
+        "src": "images/corsair-16gb-8x2gb-3200mhz-cl16-siyah.webp",
+        "type": "ram",
+        "piece": 1,
+        "brand": "corsair",
+        "tags": [
+            "ram",
+            "corsair"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 8,
+        "title": "Corsair K60 RGB Pro Mechanical Gaming Keyboard",
+        "mprice": 889.00,
+        "price": 889.00,
+        "src": "images/corsair-k60-rgb-pro.jpg",
+        "type": "keyboard",
+        "piece": 1,
+        "brand": "corsair",
+        "tags": [
+            "keyboard",
+            "corsair"
+        ],
+        "filterNumber": 0,
+        "indirim": 20
+    },
+    {
+        "id": 9,
+        "title": "Corsair MP510 240GB 3100/1050 M.2 SSD",
+        "mprice": 791,
+        "price": 791,
+        "src": "images/corsair-mp510-ssd.jpg",
+        "type": "ssd",
+        "piece": 1,
+        "brand": "corsair",
+        "tags": [
+            "ssd",
+            "corsair"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 10,
+        "title": "WD Blue 1TB 7200Rpm 64MB HDD",
+        "mprice": 849.90,
+        "price": 849.90,
+        "src": "images/v2-62381-1_large.webp",
+        "type": "hdd",
+        "piece": 1,
+        "brand": "wd",
+        "tags": [
+            "hdd",
+            "wd"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 11,
+        "title": "COOLER MASTER MASTERLIQUID ML240L V2",
+        "mprice": 1487.50,
+        "price": 1487.50,
+        "src": "images/coolermaster-liquid-cooler.webp",
+        "type": "cooler",
+        "piece": 1,
+        "brand": "cooler master",
+        "tags": [
+            "cooler",
+            "cooler master"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 12,
+        "title": "Samsung 970 Evo Plus 500GB M.2 SSD",
+        "mprice": 1604.16,
+        "price": 1604.16,
+        "src": "images/samsung-970evo-ssd.webp",
+        "type": "ssd",
+        "piece": 1,
+        "brand": "samsung",
+        "tags": [
+            "ssd",
+            "samsung"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 13,
+        "title": "Steel Series Qck Heavy Mousepad",
+        "mprice": 197.24,
+        "price": 197.24,
+        "src": "images/steelseries-qck-heavy-mousepad.png",
+        "type": "mousepad",
+        "piece": 1,
+        "brand": "steel series",
+        "tags": [
+            "mousepad",
+            "steel series"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    },
+    {
+        "id": 14,
+        "title": "Intel i5 12400 Processor",
+        "mprice": 3549.00,
+        "price": 3549.00,
+        "src": "images/intel-i5-12400.png",
+        "type": "processor",
+        "piece": 1,
+        "brand": "intel",
+        "tags": [
+            "processor",
+            "intel"
+        ],
+        "filterNumber": 0,
+        "indirim": null
+    }
+]

@@ -1,0 +1,2929 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Kumbh+Sans:wght@400;700&family=Montserrat:wght@400;600&family=Open+Sans:wght@400;500;600&display=swap');
+
+$orange: #FFB72B;
+$l-orange: #fff7e5;
+$hover-c1: #f3e1bc;
+$light-blue: #d6f8f8;
+$telephone-vw: 767px;
+$shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
+
+@mixin dp-flex ($fd, $jc, $ai) {
+    display: flex;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin button-font {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+.container {
+    width: 96%;
+    max-width: 1250px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.section-inclusive-div-2 {
+    @include dp-flex(row, space-between, flex-start);
+    width: 100%;
+    height: auto;
+}
+
+.section-inclusive-div-2-row-mobile {
+    @include dp-flex(row, space-between, flex-start);
+    width: 100%;
+    height: auto;
+}
+
+.btn-grey {
+    @include dp-flex(row, center, center);
+    gap: 0.5rem;
+    padding: 0.8rem 1.6rem;
+    outline: 0;
+    border: 0;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-orange {
+    @include dp-flex(row, center, center);
+    width: 100%;
+    height: 100%;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background: $orange;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    overflow: hidden;
+    font-size: 0.9rem;
+
+    &:hover {
+        background-color: rgba(255, 183, 43, 0.95);
+        color: #fff;
+    }
+}
+
+
+// HOME PAGE
+
+.homepage-div {
+    @include dp-flex(column, flex-start, center);
+    gap: 1rem;
+    width: 100%;
+
+    .image-slider-div {
+        position: relative;
+        width: 100%;
+        height: auto;
+
+        img {
+            width: 100%;
+            height: auto;
+            max-height: 36rem;
+        }
+
+        button {
+            position: absolute;
+            border: none;
+            background: transparent;
+            color: $orange;
+            font-weight: 600;
+            font-size: 1.75rem;
+            cursor: pointer;
+        }
+
+        button:nth-of-type(1) {
+            left: 1rem;
+            top: 50%;
+            transform: translate(0, -50%)
+        }
+
+        button:nth-of-type(2) {
+            right: 1rem;
+            top: 50%;
+            transform: translate(0, -50%)
+        }
+    }
+}
+
+
+
+
+// PRODUCT PAGES
+
+.filters-div {
+    @include dp-flex(column, flex-start, center);
+    gap: 1rem;
+    width: 20%;
+    height: auto;
+    user-select: none;
+
+    .filter-children-div {
+        @include dp-flex(column, flex-start, center);
+        height: auto;
+        width: 100%;
+        box-shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
+        padding: 0.5rem;
+
+        label {
+            @include dp-flex(row, space-between, center);
+            width: 100%;
+            height: auto;
+
+            h2 {
+                font-size: 0.95rem;
+            }
+
+            i {
+                cursor: pointer;
+            }
+        }
+
+        .filter-div-cb {
+            display: none;
+
+            &:checked+ul {
+                display: none;
+            }
+        }
+
+
+        ul {
+            @include dp-flex(column, flex-start, center);
+            padding: 1rem 0;
+            width: 100%;
+            height: auto;
+
+            li {
+                @include dp-flex(row, flex-start, center);
+                padding: 0 1rem;
+                width: 100%;
+                height: 2rem;
+
+                label {
+                    @include dp-flex(row, flex-start, center);
+                    gap: 1rem;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.section-right-side-div {
+    @include dp-flex(column, space-evenly, center);
+    gap: 1rem;
+    width: 77.5%;
+    height: auto;
+
+    .right-side-filters {
+        @include dp-flex(row, space-between, center);
+        padding: 0 1rem;
+        width: 100%;
+        height: 5rem;
+        box-shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
+    }
+}
+
+
+.products-div {
+    display: grid;
+    width: 100%;
+    gap: 1rem;
+    grid-template-columns: repeat(12, 1fr);
+    height: auto;
+
+    .product-div {
+        display: grid;
+        justify-content: stretch;
+        grid-column: span 3;
+        height: 24rem;
+        box-shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
+
+        .product-div-flex {
+            @include dp-flex(column, space-evenly, center);
+            padding: 0.5rem;
+            width: 100%;
+            height: 100%;
+
+            img {
+                margin: 0 auto;
+                width: 65%;
+                height: auto;
+            }
+
+            h3 {
+                @include dp-flex(row, flex-start, center);
+                width: 90%;
+                height: 3.5rem;
+                margin: 0 auto;
+                cursor: pointer;
+            }
+
+            div {
+                @include dp-flex(row, space-between, center);
+                width: 90%;
+                height: 2.5rem;
+                margin: 0 auto;
+
+                p {
+                    @include dp-flex(row, flex-start, center);
+                    width: 100%;
+                    height: 100%;
+                    font-weight: 500;
+
+                    &::after {
+                        content: '₺';
+                        margin-left: 4px;
+                    }
+                }
+
+                button {
+                    @include dp-flex(row, center, center);
+                    width: 2.5rem;
+                    height: 85%;
+                    background-color: $orange;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    border: 0;
+                    font-size: 1rem;
+
+                    &:hover {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// MY CART PAGE
+
+.my-cart-page-div {
+    @include dp-flex(row, space-between, flex-start);
+    width: 100%;
+    height: auto;
+
+    .my-cart-products {
+        width: 77.5%;
+        height: auto;
+        min-height: 500px;
+        box-shadow: $shadow;
+        padding: 1rem;
+        gap: 1rem;
+        @include dp-flex(column, flex-start, center);
+
+        .my-cart-product {
+            @include dp-flex(row, flex-start, center);
+            position: relative;
+            gap: 5%;
+            width: 100%;
+            height: 7rem;
+            padding: 0 1rem;
+            //border: 1px solid #ccc;
+
+            hr {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+            }
+
+            img {
+                height: auto;
+                max-height: 95%;
+                width: 11%;
+                background-color: #fff;
+            }
+
+            div:nth-of-type(1) {
+                @include dp-flex(column, space-between, flex-start);
+                height: 80%;
+                width: auto;
+                max-width: 65%;
+                background-color: #fff;
+
+                p {
+                    font-weight: 600;
+
+                    span {
+                        &:after {
+                            content: '₺';
+                            padding-left: 0.2rem;
+                        }
+                    }
+                }
+
+                p:nth-of-type(1) {
+                    span.old-price {
+                        text-decoration: 1px #333 line-through;
+
+                        &::after {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+
+            div:nth-of-type(2) {
+                display: flex;
+                position: absolute;
+                right: 1rem;
+                height: 30%;
+                width: 6rem;
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                overflow: hidden;
+
+                button {
+                    height: 100%;
+                    border: 0;
+                    width: 27.5%;
+                    cursor: pointer;
+                }
+
+                input {
+                    text-align: center;
+                    width: 45%;
+                    height: 100%;
+                    border: 0;
+                }
+            }
+        }
+
+        .clear-cart-btn {
+            display: flex;
+            justify-self: flex-start;
+            align-self: flex-end;
+            margin-right: auto;
+            margin-top: auto;
+            background: red;
+        }
+    }
+
+    .my-cart-prices {
+        @include dp-flex(column, flex-end, flex-start);
+        gap: 1rem;
+        width: 20%;
+        height: auto;
+        padding: 2rem 1rem;
+        box-shadow: $shadow;
+
+        p {
+            display: flex;
+            font-weight: 600;
+
+            span {
+                color: $orange;
+                padding-left: 0.5rem;
+
+                &::after {
+                    content: '₺';
+                }
+            }
+        }
+
+        hr {
+            width: 100%;
+            color: rgba(51, 51, 51, 0.75);
+        }
+
+        .confirm-shopping-btn {
+            @include dp-flex(row, center, center);
+            width: 100%;
+            height: 2.75rem;
+            border-radius: 6px;
+            background-color: $orange;
+            border: 0;
+            font-weight: 600;
+            font-size: 0.95rem;
+            opacity: 0.75;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+
+            &:enabled {
+                &:hover {
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+
+            &:disabled {
+                background-color: #ccc;
+            }
+        }
+    }
+}
+
+
+// PAYMENT PAGE
+
+
+.payment-div {
+    @include dp-flex(row, space-between, flex-start);
+    gap: 1rem;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+
+    div:nth-of-type(1) {
+        @include dp-flex(column, flex-start, flex-start);
+        gap: 1.5rem;
+        width: 75%;
+
+        div:nth-of-type(1) {
+            @include dp-flex(row, space-between, center);
+            width: 100%;
+            height: 2.5rem;
+
+            h2 {
+                color: rgba(51, 51, 51, 0.75);
+            }
+
+            button {
+                padding: 0.75rem;
+                border: none;
+                font-weight: 600;
+                border-radius: 6px;
+                cursor: pointer;
+            }
+        }
+
+
+        .address-information {
+            @include dp-flex(row, space-between, center);
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 0.5rem;
+            height: auto;
+            max-height: 27rem;
+
+            label {
+                display: flex;
+                max-width: 32%;
+                height: 8rem;
+                box-shadow: $shadow;
+                border-radius: 4px;
+                border: none;
+                overflow: hidden;
+
+                .address-div {
+                    @include dp-flex(column, flex-start, flex-start);
+                    gap: 0.75rem;
+                    padding: 0.5rem;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 4px;
+                    border: none;
+                }
+            }
+        }
+
+        .payment-information-div {
+            @include dp-flex(row, space-between, flex-end);
+            width: 100%;
+            height: auto;
+            box-shadow: $shadow;
+
+            form {
+                @include dp-flex(column, flex-start, flex-start);
+                gap: 1.5rem;
+                width: 50%;
+                height: auto;
+                padding: 1.25rem;
+
+                h3 {
+                    width: 100%;
+                }
+
+                .cart-number-div {
+                    @include dp-flex(column, flex-start, flex-start);
+                    gap: 1rem;
+                    width: 100%;
+                    height: auto;
+
+                    div {
+                        @include dp-flex(row, flex-start, center);
+                        width: 100%;
+                        height: auto;
+
+                        .cart-number-input {
+                            position: relative;
+                            width: 100%;
+                            height: 2.5rem;
+                            border: 1px solid #ccc;
+                            background-color: rgba(204, 204, 204, 0.25);
+                            padding: 0.6rem;
+                            border-radius: 4px;
+                            outline: none;
+                        }
+
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+
+                }
+
+
+                div:nth-of-type(2) {
+                    @include dp-flex(row, space-between, flex-start);
+                    width: 100%;
+
+                    .expiration-date-div {
+                        @include dp-flex(row, flex-start, flex-start);
+                        gap: 1rem;
+                        flex-wrap: wrap;
+                        width: 60%;
+                        position: relative;
+
+                        p {
+                            width: 100%;
+                        }
+
+                        .expiration-date-mounth-input,
+                        .expiration-date-year-input {
+                            position: relative;
+                            width: 40%;
+                            height: 2.5rem;
+                            border: 1px solid #ccc;
+                            background-color: rgba(204, 204, 204, 0.25);
+                            padding: 0.6rem;
+                            border-radius: 4px;
+                            outline: none;
+                        }
+                    }
+
+                    .cvv-div {
+                        width: 40%;
+                        @include dp-flex(column, flex-start, flex-start);
+                        gap: 1rem;
+
+                        p {
+                            width: 100%;
+                        }
+
+                        .cvv-input {
+                            width: 100%;
+                            height: 2.5rem;
+                            border: 1px solid #ccc;
+                            background-color: rgba(204, 204, 204, 0.25);
+                            padding: 0.6rem;
+                            border-radius: 4px;
+                            outline: none;
+                        }
+                    }
+                }
+            }
+
+            .payment-options-div {
+                @include dp-flex(column, flex-start, flex-start);
+                gap: 1.5rem;
+                width: 50%;
+                height: auto;
+                padding: 1.25rem;
+
+                table {
+                    @include dp-flex(column, flex-start, flex-start);
+                    width: 100%;
+                    height: 100%;
+                    padding: 0;
+                    border-radius: 6px;
+                    overflow: hidden;
+
+                    thead,
+                    tbody {
+                        width: 100%;
+                        padding: 0;
+                        margin: 0;
+                        gap: 0;
+
+                        tr {
+                            @include dp-flex(row, center, center);
+                            flex: 1;
+
+                            td {
+                                @include dp-flex(row, flex-start, center);
+                                padding-left: 1rem;
+                                flex: 1;
+                                height: 2.5rem;
+                                border: 1px solid #ccc;
+
+                                label {
+                                    @include dp-flex(row, flex-start, center);
+                                    gap: 0.5rem;
+                                    width: 100%;
+                                    height: 100%;
+                                    cursor: pointer;
+                                }
+
+                                span {
+                                    &::after {
+                                        content: '₺';
+                                        padding-left: 0.25rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    tbody:nth-last-child(1) {
+                        tr:nth-last-child(1) {
+                            td:nth-of-type(1) {
+                                border-radius: 0 0 0 5px;
+                            }
+
+                            td:nth-of-type(2) {
+                                border-radius: 0 0 5px 0;
+                            }
+                        }
+                    }
+
+                    thead {
+                        tr {
+                            td {
+                                @include dp-flex(row, flex-start, center);
+                                padding-left: 1rem;
+                                display: flex;
+                                height: 2.5rem;
+                                flex: 1;
+                                border: 1px solid #ccc;
+                                font-weight: 600;
+                            }
+
+                            td:nth-of-type(1) {
+                                border-radius: 5px 0 0 0;
+                            }
+
+                            td:nth-of-type(2) {
+                                border-radius: 0 5px 0 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        display: block;
+        color: rgba(51, 51, 51, 0.75);
+    }
+
+    div:nth-of-type(2) {
+        @include dp-flex(column, flex-end, flex-start);
+        gap: 1rem;
+        width: 20%;
+        height: auto;
+
+        .my-cart-prices {
+            @include dp-flex(column, flex-end, flex-start);
+            gap: 1rem;
+            width: 100%;
+            height: auto;
+            padding: 2rem 1rem;
+            box-shadow: $shadow;
+
+            p {
+                display: flex;
+                font-weight: 600;
+
+                span {
+                    color: $orange;
+                    padding-left: 0.5rem;
+
+                    &::after {
+                        content: '₺';
+                    }
+                }
+            }
+
+            hr {
+                width: 100%;
+                color: rgba(51, 51, 51, 0.75);
+            }
+        }
+
+        .complete-shopping-btn {
+            @include dp-flex(row, center, center);
+            width: 100%;
+            height: 2.75rem;
+            border-radius: 6px;
+            background-color: $orange;
+            border: 0;
+            font-weight: 600;
+            font-size: 0.95rem;
+            opacity: 0.75;
+            cursor: pointer;
+            text-decoration: none;
+            color: #333;
+
+            &:hover {
+                color: #fff;
+                opacity: 1;
+            }
+        }
+    }
+
+}
+
+
+// LOGİN - SİGNUP PAGE 
+
+
+.login-page-div,
+.signup-page-div {
+    @include dp-flex(column, flex-start, center);
+    margin: 0 auto;
+    width: 90vw;
+    min-width: 20rem;
+    max-width: 30rem;
+    height: auto;
+    padding: 2.5rem 0;
+    border: 1px solid #ccc;
+
+    form {
+        @include dp-flex(column, flex-start, center);
+        gap: 2rem;
+        width: 100%;
+        height: 100%;
+
+        input {
+            width: 90%;
+            height: 2rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 18px 6px;
+            color: rgba(51, 51, 51, 0.95);
+
+            &:focus {
+                outline: 3px solid $light-blue;
+            }
+        }
+
+        .confirmatory-div {
+            @include dp-flex(row, space-between, center);
+            width: 90%;
+            height: 2rem;
+            //border: 1px solid #ccc;
+            background-color: #ccc;
+            border-radius: 4px;
+            color: rgba(51, 51, 51, 0.95);
+
+            p {
+                @include dp-flex(row, center, center);
+                width: 50%;
+                height: 100%;
+                user-select: none;
+                background-color: #fff;
+                border: 1px solid #ccc;
+            }
+
+            input {
+                width: 50%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                border: 1px solid #ccc;
+                border-radius: 0;
+                padding: 8px;
+            }
+        }
+
+        a,
+        button {
+            @include dp-flex(row, center, center);
+            width: 90%;
+            height: 2.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.05rem;
+            background-color: rgb(230, 228, 228);
+
+            &:hover {
+                background: $light-blue;
+            }
+        }
+    }
+
+    .signup-btn {
+        @include dp-flex(row, center, center);
+        color: #333;
+        font-weight: 600;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+    }
+}
+
+// BTN-TYPE-1 
+
+@mixin btn-type-1($width) {
+    @include dp-flex(row, space-evenly, center);
+    width: $width;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #333;
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $light-blue;
+    }
+
+    i {
+        @include dp-flex(row, center, center);
+        flex: 1;
+        height: 100%;
+    }
+
+    span {
+        @include dp-flex(row, flex-start, center);
+        flex: 1.9;
+        height: 100%;
+    }
+}
+
+
+// HEADER 2
+
+
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background-color: $orange;
+    width: 100%;
+    height: 5rem;
+
+    div {
+        @include dp-flex(row, center, center);
+
+        .logo {
+            @include btn-type-1(7.5rem);
+            height: 70%;
+            outline: none;
+            border: none;
+        }
+    }
+}
+
+body {
+    overflow-y: scroll;
+
+    header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background-color: $orange;
+        width: 100%;
+        height: 5rem;
+
+        nav {
+            @include dp-flex(row, space-between, center);
+
+            .logo {
+                @include btn-type-1(7.5rem);
+                height: 70%;
+            }
+
+            a.logo.active {
+                background-color: $light-blue;
+            }
+
+            .navbar-buttons-div {
+                @include dp-flex(row, space-between, center);
+                width: 18rem;
+                height: 70%;
+                position: relative;
+
+                .login-signup-btn,
+                .cart-btn {
+                    @include btn-type-1(48%);
+                    border: 0;
+
+                    .product-piece-span {
+                        @include dp-flex(row, center, center);
+                        width: 1.05rem;
+                        height: 1.05rem;
+                        position: absolute;
+                        top: 8px;
+                        left: 8px;
+                        background-color: red;
+                        border-radius: 50%;
+                        color: #fff;
+                    }
+                }
+
+                .cart-btn {
+                    position: relative;
+                }
+
+                .login-signup-btn {
+                    span {
+                        font-size: 0.9rem;
+                    }
+
+                    &:hover ul {
+                        @include dp-flex(column, flex-start, center);
+                    }
+
+                    &:focus ul {
+                        @include dp-flex(column, flex-start, center);
+                    }
+
+                    ul {
+                        display: none;
+                        position: absolute;
+                        padding-top: 0.75rem;
+                        top: 3.5rem;
+                        left: 0;
+                        list-style: none;
+                        width: 14rem;
+                        height: auto;
+                        background-color: transparent;
+                        box-shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
+                        z-index: 2;
+
+                        li {
+                            @include dp-flex(row, center, center);
+                            width: 100%;
+                            height: 2rem;
+                            background-color: none;
+                            background-color: #fff;
+
+                            a {
+                                @include dp-flex(row, center, center);
+                                width: 100%;
+                                height: 100%;
+                                text-decoration: none;
+                                color: rgba(51, 51, 51, 0.9);
+
+                                span {
+                                    flex: 8.5;
+                                }
+
+                                i {
+                                    @include dp-flex(row, center, center);
+                                    flex: 1.5;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                a.active {
+                    background-color: $light-blue;
+                }
+            }
+
+            .navbar-search-menu-div {
+                @include dp-flex(row, space-between, center);
+                position: relative;
+                width: 14rem;
+                height: 70%;
+
+                #menu-checkbox {
+                    display: none;
+
+                    &:checked~.dropdown-menu {
+                        @include dp-flex(column, flex-start, center);
+                    }
+                }
+
+                .search-btn {
+                    @include btn-type-1(36%);
+                    border: 0;
+                }
+
+                .menu-btn {
+                    @include btn-type-1(60%);
+                    position: relative;
+                    user-select: none;
+                }
+
+                .dropdown-menu {
+                    display: none;
+                    position: absolute;
+                    top: 4.25rem;
+                    left: 0;
+                    width: 14rem;
+                    padding: 0.25rem 0;
+                    height: auto;
+                    list-style: none;
+                    z-index: 2;
+
+                    li {
+                        width: 100%;
+                        height: 2.5rem;
+                        background-color: $orange;
+
+                        &:hover {
+                            background-color: $hover-c1;
+                        }
+
+                        label {
+                            width: 100%;
+                            height: 100%;
+
+                            a {
+                                @include dp-flex(row, center, center);
+                                width: 100%;
+                                height: 100%;
+                                text-decoration: none;
+                                color: #333;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    section {
+        @include dp-flex(row, center, flex-start);
+        width: 100%;
+        height: auto;
+
+        .section-inclusive-div {
+            @include dp-flex(row, space-between, center);
+            padding: 2rem 0;
+        }
+    }
+}
+
+
+// MY ACCOUNT AND BELOW PAGES
+.my-account-left-side {
+    @include dp-flex(column, space-between, flex-start);
+    gap: 2rem;
+    width: 20%;
+    min-width: 15rem;
+    height: auto;
+
+    .myaccount-navbar {
+        @include dp-flex(column, space-between, flex-start);
+        list-style: none;
+        width: 100%;
+
+        li {
+            @include dp-flex(row, flex-start, center);
+            width: 100%;
+            height: 2.5rem;
+
+
+            a {
+                @include dp-flex(row, flex-start, center);
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #333;
+                font-weight: 600;
+
+                span {
+                    flex: 8.5;
+                }
+
+                i {
+                    @include dp-flex(row, center, center);
+                    flex: 1.5;
+                }
+            }
+
+            a.active {
+                color: $orange;
+            }
+        }
+    }
+
+    form {
+        width: 100%;
+        height: 2.5rem;
+
+        .logout-btn {
+            @include dp-flex(row, center, center);
+            gap: 5%;
+            width: 100%;
+            height: 2.5rem;
+            text-decoration: none;
+            background-color: #ccc;
+            border-radius: 6px;
+            color: #333;
+            font-weight: 600;
+            border: 0;
+            cursor: pointer;
+
+            &:hover {
+                background-color: rgb(133, 133, 133);
+            }
+        }
+    }
+
+}
+
+
+// USER INFORMATİON PAGE
+
+
+.myaccount-content-div {
+    @include dp-flex(row, space-between, flex-start);
+    gap: 1rem;
+    width: 70%;
+    min-width: 45rem;
+    height: auto;
+
+    form:nth-of-type(1) {
+        @include dp-flex(column, flex-start, flex-end);
+        gap: 2.5rem;
+        width: 100%;
+        height: auto;
+        padding: 2rem 1rem;
+
+        h2 {
+            display: flex;
+            margin-right: auto;
+            justify-self: flex-start;
+        }
+
+        div:nth-of-type(1) {
+            @include dp-flex(row, space-between, center);
+            gap: 1rem;
+            width: 100%;
+            height: 2.75rem;
+
+            div {
+                @include dp-flex(row, flex-start, center);
+                position: relative;
+                width: 50%;
+                height: 100%;
+            }
+
+            div:nth-of-type(1) {
+                &::after {
+                    content: 'Name';
+                    position: absolute;
+                    top: -1.5rem;
+                    left: 0;
+                    color: rgba(51, 51, 51, 0.75);
+                }
+            }
+
+            div:nth-of-type(2) {
+                &::after {
+                    content: 'Last Name';
+                    position: absolute;
+                    top: -1.5rem;
+                    left: 0;
+                    color: rgba(51, 51, 51, 0.75);
+                }
+            }
+        }
+
+        p {
+            @include dp-flex(row, flex-start, center);
+            width: 20%;
+            min-width: 6rem;
+            height: 100%;
+            color: rgba(51, 51, 51, 0.75);
+        }
+
+        div:nth-of-type(2),
+        div:nth-of-type(3) {
+            @include dp-flex(row, flex-start, center);
+            position: relative;
+            width: 100%;
+            height: 2.75rem;
+
+        }
+
+        div:nth-of-type(2) {
+            &::after {
+                content: 'Email';
+                position: absolute;
+                top: -1.5rem;
+                left: 0;
+                color: rgba(51, 51, 51, 0.75);
+            }
+        }
+
+        div:nth-of-type(3) {
+            &::after {
+                content: 'Telephone';
+                position: absolute;
+                top: -1.5rem;
+                left: 0;
+                color: rgba(51, 51, 51, 0.75);
+            }
+        }
+
+        input[type="text"] {
+            width: 100%;
+            height: 100%;
+            outline: 0;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            padding: 0.75rem 0.5rem;
+            background-color: rgb(248, 248, 248);
+        }
+
+        .user-update-btn {
+            width: 50%;
+            height: 2rem;
+            border: none;
+            background-color: $orange;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+
+            &:disabled {
+                background-color: #ccc;
+            }
+        }
+    }
+
+    .change-password-form {
+        @include dp-flex(column, flex-start, flex-start);
+        gap: 1.5rem;
+        width: 30%;
+        min-width: 20rem;
+        height: auto;
+        padding: 2rem 1rem;
+        box-shadow: $shadow;
+
+        div {
+            @include dp-flex(column, flex-start, flex-start);
+            gap: 0.5rem;
+            width: 100%;
+            height: auto;
+
+            p {
+                width: 100%;
+                height: auto;
+            }
+
+            input {
+                padding: 0.5rem 0.5rem;
+                border-radius: 4px;
+                width: 100%;
+                height: auto;
+                border: 2px solid #ccc;
+                outline: none;
+                background-color: rgba(204, 204, 204, 0.25);
+
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+}
+
+// MY ADDRESSES
+
+
+.my-addresses-div {
+    @include dp-flex(column, flex-start, flex-start);
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+
+    div:nth-of-type(1) {
+        width: 100%;
+        height: 4rem;
+        @include dp-flex(row, space-between, center);
+
+        .add-addresses-btn {
+            @include dp-flex(row, center, center);
+            border: 0;
+            background-color: $orange;
+            width: 20%;
+            height: 65%;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+
+        }
+    }
+
+    div:nth-of-type(2) {
+        @include dp-flex(row, space-between, center);
+        width: 100%;
+        height: 4rem;
+
+        .add-address-textarea {
+            width: 75%;
+            height: 100%;
+            padding: 0.5rem;
+            resize: none;
+            border: 2px solid $orange;
+        }
+
+        .save-address-btn {
+            @include dp-flex(row, center, center);
+            border: 0;
+            background-color: $light-blue;
+            width: 20%;
+            height: 65%;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    }
+
+    .address-div {
+        @include dp-flex(row, space-between, center);
+        gap: 1rem;
+        width: 100%;
+        height: auto;
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+
+        .addresses-inputs {
+            width: 80%;
+            height: 4rem;
+            padding: 0.5rem;
+            resize: none;
+            border: none;
+            background-color: rgb(248, 248, 248);
+        }
+
+        .address-div-btns {
+            @include dp-flex(column, space-between, center);
+            width: 2.5rem;
+
+            button {
+                width: 2.5rem;
+                height: 40%;
+                cursor: pointer;
+                border: none;
+                border-radius: 4px;
+            }
+        }
+    }
+}
+
+
+// MY ORDERS PAGE 
+
+
+.my-orders-div {
+    @include dp-flex(column, flex-start, flex-start);
+    gap: 2rem;
+    width: 70%;
+
+    .order-div {
+        @include dp-flex(column, flex-start, center);
+        width: 100%;
+        box-shadow: $shadow;
+        border-radius: 6px;
+        overflow: hidden;
+
+        .order-div-1 {
+            @include dp-flex(row, flex-start, center);
+            gap: 1rem;
+            width: 100%;
+            height: 3rem;
+            padding: 1rem;
+            background-color: rgba(204, 204, 204, 0.25);
+
+            hr {
+                height: 100%;
+            }
+
+            p:nth-of-type(2) {
+                span {
+                    &::after {
+                        content: '₺';
+                        padding-left: 4px;
+                    }
+                }
+            }
+
+            p:nth-of-type(3) {
+                span {
+                    font-weight: 600;
+                }
+            }
+
+            label {
+                display: flex;
+                margin-left: auto;
+                justify-self: flex-end;
+                border: 1px solid #ccc;
+                padding: 0.4rem 0.8rem;
+                border-radius: 4px;
+                user-select: none;
+            }
+        }
+
+        .order-div-2 {
+            @include dp-flex(column, flex-start, center);
+            width: 100%;
+            height: auto;
+
+            .order-product-div {
+                @include dp-flex(row, flex-start, center);
+                gap: 1rem;
+                width: 100%;
+                height: 7rem;
+                padding: 0.75rem;
+
+                img {
+                    height: auto;
+                    width: 10%;
+                }
+
+                .order-product-div-2 {
+                    @include dp-flex(column, flex-start, center);
+                    width: 100%;
+                    height: 100%;
+
+                    .order-product-div-title {
+                        @include dp-flex(row, flex-start, center);
+                        width: 100%;
+                        height: 40%;
+                    }
+
+                    div {
+                        @include dp-flex(row, flex-start, center);
+                        gap: 1rem;
+                        width: 100%;
+                        height: 60%;
+
+                        p:nth-of-type(1)::after,
+                        p:nth-of-type(3)::after {
+                            content: '₺';
+                            padding-left: 0.25rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        .order-details-cb {
+            display: none;
+
+            &:checked+.order-div-3 {
+                @include dp-flex(column, flex-start, flex-start);
+            }
+        }
+
+        .order-div-3 {
+            //@include dp-flex(column, flex-start, flex-start);
+            display: none;
+            gap: 0.75rem;
+            width: 100%;
+            height: auto;
+            padding: 0.75rem;
+
+            hr {
+                width: 100%;
+            }
+
+            p {
+                font-weight: 600;
+            }
+
+            span {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+
+// MY FAVORİTES PRODUCTS PAGE
+
+
+.my-favorites-products-div {
+    @include dp-flex(column, flex-start, flex-start);
+    gap: 1rem;
+    width: 75%;
+    height: auto;
+
+    .my-favorites-products-div-2 {
+        @include dp-flex(row, space-between, center);
+        gap: 2rem;
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+
+        .favorite-product-div {
+            @include dp-flex(row, flex-start, center);
+            position: relative;
+            gap: 1rem;
+            width: 48%;
+            height: 10rem;
+            padding: 0 1rem;
+            box-shadow: $shadow;
+            border-radius: 0.25rem;
+
+            img {
+                height: auto;
+                width: 9rem;
+            }
+
+            .favorite-product-content-div {
+                @include dp-flex(column, space-between, flex-start);
+                height: 85%;
+                width: auto;
+
+                h3 {
+                    padding: 0 2rem;
+                    cursor: pointer;
+                }
+
+                p {
+                    padding: 0 2rem;
+                    font-weight: 600;
+
+                    &::after {
+                        content: '₺';
+                        padding-left: 0.25rem;
+                    }
+                }
+            }
+
+            button {
+                @include dp-flex(row, center, center);
+                position: absolute;
+                top: 0;
+                right: 4%;
+                margin-bottom: auto;
+                align-self: flex-start;
+                width: auto;
+                height: auto;
+                cursor: pointer;
+                border: none;
+                background: none;
+
+                &:hover {
+                    color: $orange;
+                }
+
+                i {
+                    @include dp-flex(row, center, center);
+                    width: 100%;
+                    height: 100%;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+
+// PRODUCT DETAİLS PAGE
+
+.product-details-page-first-div {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .product-details-page-div {
+        @include dp-flex(row, space-between, flex-start);
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        box-shadow: $shadow;
+        margin-bottom: 1rem;
+
+        .product-detail-img-div {
+            @include dp-flex(row, center, center);
+            width: 40%;
+            height: auto;
+            border: 1px solid rgba(204, 204, 204, 0.4);
+            border-radius: 0.25rem;
+
+            img {
+                width: 90%;
+                height: auto;
+            }
+        }
+
+        .product-details-div {
+            @include dp-flex(column, flex-start, flex-start);
+            gap: 2rem;
+            width: 55%;
+
+            .product-content {
+                @include dp-flex(column, space-between, flex-start);
+                width: 100%;
+                height: 5rem;
+
+                h2 {
+                    width: 100%;
+                    height: 55%;
+                }
+
+                p {
+                    @include dp-flex(row, flex-start, flex-end);
+                    gap: 1rem;
+                    width: 100%;
+                    height: 45%;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                    color: $orange;
+
+                    span {
+                        &:after {
+                            content: '₺';
+                            padding-left: 0.2rem;
+                        }
+                    }
+                }
+
+                p:nth-of-type(1) {
+                    span.old-price {
+                        text-decoration: 1px #333 line-through;
+
+                        &::after {
+                            padding-left: 0;
+                        }
+                    }
+                }
+            }
+
+            hr {
+                width: 100%;
+                height: 1px;
+                border-color: rgba(99, 99, 99, 0.15);
+            }
+
+            .product-advantages {
+                @include dp-flex(row, flex-start, center);
+                gap: 1%;
+                width: 100%;
+                height: auto;
+                user-select: none;
+
+                div {
+                    @include dp-flex(row, center, center);
+                    gap: 0.5rem;
+                    width: 30%;
+                    height: 3rem;
+                    padding: 0.75rem;
+                    border: 1px solid #fddc95;
+                    border-radius: 6px;
+                    font-size: 0.95rem;
+                    background: $l-orange;
+                }
+
+            }
+
+            .product-details-buttons-div {
+                @include dp-flex(row, space-between, center);
+                width: 100%;
+                height: 2.5rem;
+
+                .addtocart-btn {
+                    width: 70%;
+                }
+
+                .add-to-favorites-btn {
+                    @include dp-flex(row, center, center);
+                    width: 10%;
+                    height: 100%;
+                    border: 1px solid rgba(204, 204, 204);
+                    cursor: pointer;
+                    border-radius: 0.25rem;
+                    outline: none;
+                    background: none;
+                    font-size: 1rem;
+
+                    i {
+                        @include dp-flex(row, center, center);
+                        width: 100%;
+                        height: 100%;
+                        transition: 0.25s;
+
+                        &:hover {
+                            transform: scale(1.25);
+                        }
+                    }
+                }
+
+                button.true {
+                    border: 1px solid #1ee61e;
+                    background: #1ee61e;
+                    color: #fff;
+                }
+
+                .compare-btn {
+                    @include dp-flex(row, center, center);
+                    width: 15%;
+                    height: 100%;
+                    border: 1px solid rgba(204, 204, 204);
+                    cursor: pointer;
+                    border-radius: 0.25rem;
+                    outline: none;
+                    background: none;
+                    font-size: 1rem;
+
+                    i {
+                        @include dp-flex(row, center, center);
+                        width: 100%;
+                        height: 100%;
+                        transition: 0.25s;
+
+                        &:hover {
+                            transform: scale(1.25);
+                        }
+                    }
+
+                    hr {
+                        width: 1px;
+                        height: 80%;
+                    }
+
+                }
+            }
+
+            .product-detail-list {
+                @include dp-flex(column, flex-start, flex-start);
+                gap: 0.25rem;
+                list-style: none;
+                width: 100%;
+                height: auto;
+                user-select: none;
+
+                li {
+                    @include dp-flex(row, flex-start, flex-start);
+                    border: 1px solid rgba(204, 204, 204, 0.4);
+                    border-radius: 0.25rem;
+                    width: 20rem;
+                    height: 2rem;
+
+                    .product-detail-span-1 {
+                        @include dp-flex(row, center, center);
+                        text-align: center;
+                        background-color: rgba(204, 204, 204, 0.4);
+                        width: 50%;
+                        height: 100%;
+                        border-radius: 0.25rem;
+                    }
+
+                    .product-detail-span-2 {
+                        @include dp-flex(row, center, center);
+                        text-align: center;
+                        width: 50%;
+                        height: 100%;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .product-compare-div {
+        @include dp-flex(column, flex-start, flex-end);
+        width: 80%;
+        position: absolute;
+        top: 0;
+        left: 10%;
+        gap: 1rem;
+        padding: 2rem 1rem;
+        border: 1px solid rgba(204, 204, 204, 0.4);
+        background: #fff;
+
+        div:nth-of-type(1) {
+            @include dp-flex(row, flex-end, center);
+            margin: 0 auto;
+            width: 100%;
+            height: auto;
+            font-size: 1.5rem;
+
+            i {
+                cursor: pointer;
+            }
+        }
+
+        .product-compare-table {
+            width: 100%;
+            margin: 0 auto;
+            border-collapse: collapse;
+
+            thead,
+            tbody {
+                tr {
+                    @include dp-flex(row, flex-start, center);
+                    flex: 1;
+                    height: 100%;
+
+                    td {
+                        @include dp-flex(row, space-between, center);
+                        flex: 1;
+                        height: 100%;
+                        border: 1px solid rgba(204, 204, 204, 0.75);
+                        padding: 0.5rem 1rem;
+
+                    }
+
+                    td:nth-of-type(1) {
+                        font-weight: 600;
+                    }
+                }
+            }
+
+            tbody:nth-of-type(1) {
+                tr {
+                    height: 5.5rem;
+
+                    td {
+                        i {
+                            cursor: pointer;
+                        }
+
+                        img {
+                            width: 4rem;
+                            height: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width:$telephone-vw) {
+
+    // PRODUCT PAGES
+
+    .section-inclusive-div-2 {
+        @include dp-flex(column, space-between, flex-start);
+        gap: 1rem;
+
+        .filters-div {
+            @include dp-flex(column, flex-start, center);
+            width: 100%;
+            height: auto;
+            user-select: none;
+
+            .filter-children-div {
+                @include dp-flex(column, flex-start, center);
+                height: auto;
+                width: 100%;
+                box-shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
+
+
+                label {
+                    @include dp-flex(row, space-between, center);
+                    width: 100%;
+                    height: auto;
+
+                    h2 {
+                        font-size: 0.95rem;
+                    }
+
+                    i {
+                        cursor: pointer;
+                    }
+                }
+
+                .filter-div-cb {
+                    display: none;
+
+                    &:checked+ul {
+                        display: none;
+                    }
+                }
+
+                ul {
+                    @include dp-flex(column, flex-start, center);
+                    padding: 1rem 0;
+                    width: 100%;
+                    height: auto;
+
+                    li {
+                        @include dp-flex(row, flex-start, center);
+                        padding: 0 1rem;
+                        width: 100%;
+                        height: 2rem;
+
+                        label {
+                            @include dp-flex(row, flex-start, center);
+                            gap: 1rem;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .section-right-side-div {
+        @include dp-flex(column, space-evenly, center);
+        gap: 1rem;
+        width: 100%;
+        height: auto;
+
+        .right-side-filters {
+            @include dp-flex(row, space-between, center);
+            padding: 0 1rem;
+            width: 100%;
+            height: 5rem;
+            box-shadow: rgba(99, 99, 99, 0.25) 0px 2px 8px 0px;
+        }
+    }
+
+    .products-div {
+        .product-div {
+            border: none;
+            grid-column: span 6;
+        }
+    }
+
+    // MY CART PAGE
+
+    .my-cart-page-div {
+        @include dp-flex(column, space-between, center);
+        gap: 1rem;
+        width: 100%;
+        height: auto;
+
+        .my-cart-products {
+            width: 100%;
+            height: auto;
+            min-height: 500px;
+            border: 1px solid #ccc;
+            padding: 1rem;
+            gap: 1rem;
+            @include dp-flex(column, flex-start, center);
+
+            .my-cart-product {
+                @include dp-flex(row, flex-start, center);
+                position: relative;
+                gap: 5%;
+                width: 100%;
+                height: 7rem;
+                padding: 0 1rem;
+                //border: 1px solid #ccc;
+
+                img {
+                    height: auto;
+                    max-height: 99%;
+                    width: 11%;
+                    background-color: #fff;
+                }
+
+                div:nth-of-type(1) {
+                    @include dp-flex(column, space-between, flex-start);
+                    height: 80%;
+                    width: auto;
+                    max-width: 65%;
+                    background-color: #fff;
+
+                    p {
+                        padding-left: 8px;
+                        font-weight: 600;
+
+                        span {
+                            &::after {
+                                content: '₺';
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                }
+
+                div:nth-of-type(2) {
+                    display: flex;
+                    position: absolute;
+                    right: 1rem;
+                    height: 30%;
+                    width: 6rem;
+                    background-color: #fff;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    overflow: hidden;
+
+                    button {
+                        height: 100%;
+                        border: 0;
+                        width: 27.5%;
+                        cursor: pointer;
+                    }
+
+                    input {
+                        text-align: center;
+                        width: 45%;
+                        height: 100%;
+                        border: 0;
+                    }
+                }
+
+                hr {
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                }
+            }
+
+            .clear-cart-btn {
+                background: red;
+            }
+        }
+
+        .my-cart-prices {
+            @include dp-flex(column, flex-start, center);
+            width: 100%;
+            height: auto;
+            min-height: 100px;
+            padding: 1rem;
+            border: 1px solid #ccc;
+
+            p {
+                @include dp-flex(row, flex-start, center);
+                width: 100%;
+                height: auto;
+                font-weight: 600;
+
+                span {
+                    color: $orange;
+
+                    &::after {
+                        content: '₺';
+                    }
+                }
+            }
+
+
+        }
+    }
+
+
+    // PAYMENT PAGE
+
+
+    .payment-div {
+        @include dp-flex(column, flex-start, flex-start);
+        gap: 1rem;
+        width: 100%;
+        height: auto;
+        min-height: 500px;
+
+        div:nth-of-type(1) {
+            @include dp-flex(column, flex-start, flex-start);
+            gap: 1.5rem;
+            width: 100%;
+
+            div:nth-of-type(1) {
+                @include dp-flex(row, space-between, center);
+                width: 100%;
+                height: 2.5rem;
+
+                h2 {
+                    color: rgba(51, 51, 51, 0.75);
+                }
+
+                button {
+                    padding: 0.75rem;
+                    border: none;
+                    font-weight: 600;
+                    border-radius: 6px;
+                    cursor: pointer;
+                }
+            }
+
+
+            .address-information {
+                @include dp-flex(row, space-between, center);
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 0.5rem;
+                height: auto;
+                max-height: 27rem;
+
+                label {
+                    display: flex;
+                    padding: 0.5rem;
+                    max-width: 48%;
+                    min-height: 8rem;
+                    box-shadow: $shadow;
+                    border-radius: 4px;
+                    border: none;
+
+                    .address-div {
+                        @include dp-flex(column, flex-start, flex-start);
+                        gap: 0.75rem;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+
+            .payment-information-div {
+                @include dp-flex(column, space-between, flex-start);
+                gap: 2rem;
+                width: 100%;
+                height: auto;
+                box-shadow: $shadow;
+
+                form {
+                    @include dp-flex(column, flex-start, flex-start);
+                    gap: 1.5rem;
+                    width: 100%;
+                    height: auto;
+                    padding: 1.25rem;
+
+                    h3 {
+                        width: 100%;
+                    }
+
+                    .cart-number-div {
+                        @include dp-flex(column, flex-start, flex-start);
+                        gap: 1rem;
+                        width: 100%;
+                        height: auto;
+
+                        .cart-number-input {
+                            position: relative;
+                            width: 100%;
+                            height: 2.5rem;
+                            border: 1px solid #ccc;
+                            background-color: rgba(204, 204, 204, 0.25);
+                            padding: 0.6rem;
+                            border-radius: 4px;
+                            outline: none;
+                        }
+
+                        input::-webkit-outer-spin-button,
+                        input::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                    }
+
+
+                    div:nth-of-type(2) {
+                        @include dp-flex(row, space-between, flex-start);
+                        width: 100%;
+
+                        .expiration-date-div {
+                            @include dp-flex(row, flex-start, flex-start);
+                            gap: 1rem;
+                            flex-wrap: wrap;
+                            width: 50%;
+                            position: relative;
+
+                            p {
+                                width: 100%;
+                            }
+
+                            .expiration-date-mounth-input,
+                            .expiration-date-year-input {
+                                position: relative;
+                                width: 40%;
+                                height: 2.5rem;
+                                border: 1px solid #ccc;
+                                background-color: rgba(204, 204, 204, 0.25);
+                                padding: 0.6rem;
+                                border-radius: 4px;
+                                outline: none;
+                            }
+                        }
+
+                        .cvv-div {
+                            width: 40%;
+                            @include dp-flex(column, flex-start, flex-start);
+                            gap: 1rem;
+
+                            p {
+                                width: 100%;
+                            }
+
+                            .cvv-input {
+                                width: 100%;
+                                height: 2.5rem;
+                                border: 1px solid #ccc;
+                                background-color: rgba(204, 204, 204, 0.25);
+                                padding: 0.6rem;
+                                border-radius: 4px;
+                                outline: none;
+                            }
+                        }
+                    }
+                }
+
+                .payment-options-div {
+                    @include dp-flex(column, flex-start, flex-start);
+                    gap: 1.5rem;
+                    width: 100%;
+                    height: auto;
+                    padding: 1.25rem;
+
+                    table {
+                        width: 100%;
+                        height: 100%;
+                        padding: 0;
+                        border-radius: 6px;
+                        overflow: hidden;
+
+                        tr {
+                            @include dp-flex(row, center, center);
+                            flex: 1;
+
+                            td {
+                                @include dp-flex(row, flex-start, center);
+                                padding-left: 1rem;
+                                flex: 1;
+                                height: 2.5rem;
+                                border: 1px solid #ccc;
+
+                                label {
+                                    @include dp-flex(row, flex-start, center);
+                                    gap: 0.5rem;
+                                    width: 100%;
+                                    height: 100%;
+                                    cursor: pointer;
+                                }
+
+                                span {
+                                    &::after {
+                                        content: '₺';
+                                        padding-left: 0.25rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        tr:nth-of-type(1) {
+                            td {
+                                @include dp-flex(row, flex-start, center);
+                                padding-left: 1rem;
+                                display: flex;
+                                height: 2.5rem;
+                                flex: 1;
+                                border: 1px solid #ccc;
+                                font-weight: 600;
+                            }
+
+                            td:nth-of-type(1) {
+                                border-radius: 5px 0 0 0;
+                            }
+
+                            td:nth-of-type(2) {
+                                border-radius: 0 5px 0 0;
+                            }
+                        }
+
+                        tr:nth-last-child(1) {
+                            td:nth-of-type(1) {
+                                border-radius: 0 0 0 5px;
+                            }
+
+                            td:nth-of-type(2) {
+                                border-radius: 0 0 5px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        h2 {
+            display: block;
+            color: rgba(51, 51, 51, 0.75);
+        }
+
+        div:nth-of-type(2) {
+            @include dp-flex(column, flex-end, flex-start);
+            gap: 1rem;
+            width: 100%;
+            height: auto;
+
+            .my-cart-prices {
+                @include dp-flex(column, flex-end, flex-start);
+                gap: 1rem;
+                width: 100%;
+                height: auto;
+                padding: 2rem 1rem;
+                box-shadow: $shadow;
+
+                p {
+                    display: flex;
+                    font-weight: 600;
+
+                    span {
+                        color: $orange;
+                        padding-left: 0.5rem;
+
+                        &::after {
+                            content: '₺';
+                        }
+                    }
+                }
+
+                hr {
+                    width: 100%;
+                    color: rgba(51, 51, 51, 0.75);
+                }
+            }
+
+            .complete-shopping-btn {
+                @include dp-flex(row, center, center);
+                width: 100%;
+                height: 2.75rem;
+                border-radius: 6px;
+                background-color: $orange;
+                border: 0;
+                font-weight: 600;
+                font-size: 0.95rem;
+                opacity: 0.75;
+                cursor: pointer;
+                text-decoration: none;
+                color: #333;
+
+                &:hover {
+                    color: #fff;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    body {
+        header {
+            position: relative;
+
+            nav {
+                .logo {
+                    width: 6rem;
+                }
+
+                .navbar-buttons-div {
+                    width: 34%;
+                    max-width: 9rem;
+                    position: static;
+
+                    .login-signup-btn {
+                        font-size: 1.25rem;
+
+                        span {
+                            display: none;
+                        }
+                    }
+
+                    .cart-btn {
+                        font-size: 1.25rem;
+
+                        span:nth-of-type(2) {
+                            display: none;
+                        }
+                    }
+
+                    .login-signup-btn {
+                        span {
+                            font-size: 0.9rem;
+                        }
+
+                        &:hover ul {
+                            @include dp-flex(column, flex-start, center);
+                        }
+
+                        &:focus ul {
+                            @include dp-flex(column, flex-start, center);
+                        }
+
+                        ul {
+                            display: none;
+                            position: absolute;
+                            padding-top: 0.75rem;
+                            top: 3.5rem;
+                            left: 0;
+                            list-style: none;
+                            width: 100%;
+                            height: auto;
+                            background-color: none;
+                            z-index: 2;
+                            box-shadow: none;
+
+                            li {
+                                @include dp-flex(row, center, center);
+                                width: 100%;
+                                height: 2.5rem;
+                                background-color: $orange;
+
+                                a {
+                                    @include dp-flex(row, center, center);
+                                    width: 100%;
+                                    height: 100%;
+                                    text-decoration: none;
+                                    color: #333;
+
+                                    span {
+                                        display: flex;
+                                        flex: 8.5;
+                                        font-weight: 600;
+                                    }
+
+                                    i {
+                                        @include dp-flex(row, center, center);
+                                        flex: 1.5;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .navbar-search-menu-div {
+                    position: static;
+                    width: 34%;
+                    max-width: 9rem;
+
+                    .menu-btn,
+                    .search-btn {
+                        width: 48%;
+                        position: static;
+                        font-size: 1.25rem;
+
+                        span {
+                            display: none;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        top: 4.75rem;
+                        left: 0;
+                        padding: 0.25rem 0;
+                        width: 100vw;
+                        height: calc(100vh - 4.75rem);
+                        list-style: none;
+
+                        li {
+                            width: 100%;
+                            height: 3rem;
+                            background-color: $orange;
+
+                            &:hover {
+                                background-color: $hover-c1;
+                            }
+
+                            a {
+                                @include dp-flex(row, center, center);
+                                width: 100%;
+                                height: 100%;
+                                text-decoration: none;
+                                color: #333;
+                                font-weight: 600;
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // MY ACCOUNT AND BELOW PAGES
+
+    .my-account-left-side {
+        @include dp-flex(column, space-between, flex-start);
+        gap: 2rem;
+        width: 100%;
+        min-width: 7rem;
+        height: auto;
+
+        .myaccount-navbar {
+            @include dp-flex(column, space-between, flex-start);
+            list-style: none;
+            width: 100%;
+
+            li {
+                @include dp-flex(row, flex-start, center);
+                width: 100%;
+                height: 2.5rem;
+
+                a {
+                    @include dp-flex(row, flex-start, center);
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: #333;
+                    font-weight: 600;
+
+                    span {
+                        display: flex;
+                    }
+
+                    i {
+                        @include dp-flex(row, center, center);
+                        flex: 1.5;
+                    }
+                }
+
+                /*a.active {
+                background-color: $light-blue;
+            }*/
+            }
+        }
+
+        form {
+            width: 100%;
+            height: 2.5rem;
+
+            .logout-btn {
+                @include dp-flex(row, center, center);
+                gap: 5%;
+                width: 100%;
+                height: 2.5rem;
+                text-decoration: none;
+                background-color: #ccc;
+                border-radius: 6px;
+                color: #333;
+                font-weight: 600;
+
+                &:hover {
+                    background-color: rgb(133, 133, 133);
+                }
+            }
+        }
+    }
+
+
+    // USER INFORMATİON PAGE
+
+
+    .myaccount-content-div {
+        @include dp-flex(column, space-between, flex-start);
+        gap: 1rem;
+        width: 100%;
+        min-width: 0;
+        height: auto;
+
+        form:nth-of-type(1) {
+            @include dp-flex(column, flex-start, center);
+            gap: 2.5rem;
+            width: 100%;
+            height: auto;
+            padding: 2rem 0;
+
+            div:nth-of-type(1) {
+                @include dp-flex(row, space-between, center);
+                gap: 1rem;
+                width: 100%;
+                height: 2.75rem;
+
+                div {
+                    @include dp-flex(row, flex-start, center);
+                    position: relative;
+                    width: 50%;
+                    height: 100%;
+                }
+
+                div:nth-of-type(1) {
+                    &::after {
+                        content: 'Name';
+                        position: absolute;
+                        top: -1.5rem;
+                        left: 0;
+                        color: rgba(51, 51, 51, 0.75);
+                    }
+                }
+
+                div:nth-of-type(2) {
+                    &::after {
+                        content: 'Last Name';
+                        position: absolute;
+                        top: -1.5rem;
+                        left: 0;
+                        color: rgba(51, 51, 51, 0.75);
+                    }
+                }
+            }
+
+            div:nth-of-type(2),
+            div:nth-of-type(3) {
+                @include dp-flex(row, flex-start, center);
+                position: relative;
+                width: 100%;
+                height: 2.75rem;
+            }
+
+            div:nth-of-type(2) {
+                &::after {
+                    content: 'Email';
+                    position: absolute;
+                    top: -1.5rem;
+                    left: 0;
+                    color: rgba(51, 51, 51, 0.75);
+                }
+            }
+
+            div:nth-of-type(3) {
+                &::after {
+                    content: 'Telephone';
+                    position: absolute;
+                    top: -1.5rem;
+                    left: 0;
+                    color: rgba(51, 51, 51, 0.75);
+                }
+            }
+
+            input[type="text"] {
+                width: 100%;
+                height: 100%;
+                outline: 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                padding: 0.75rem 0.5rem;
+                background-color: rgb(248, 248, 248);
+            }
+
+            .user-update-btn {
+                width: 50%;
+                height: 2rem;
+                border: none;
+                background-color: $orange;
+                border-radius: 4px;
+                color: #fff;
+                cursor: pointer;
+
+                &:disabled {
+                    background-color: #ccc;
+                }
+            }
+        }
+
+        .change-password-form {
+            width: 100%;
+        }
+    }
+
+
+    // MY ADDRESSES
+
+
+    .my-addresses-div {
+        @include dp-flex(column, flex-start, flex-start);
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+
+        div:nth-of-type(1) {
+            width: 100%;
+            height: 4rem;
+            @include dp-flex(row, space-between, center);
+
+            .add-addresses-btn {
+                @include dp-flex(row, center, center);
+                border: 0;
+                background-color: $orange;
+                width: 35%;
+                height: 65%;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 4px;
+
+            }
+        }
+
+        div:nth-of-type(2) {
+            @include dp-flex(row, space-between, center);
+            width: 100%;
+            height: 4rem;
+
+            .add-address-textarea {
+                width: 75%;
+                height: 100%;
+                padding: 0.5rem;
+                resize: none;
+                border: 2px solid $orange;
+            }
+
+            .save-address-btn {
+                @include dp-flex(row, center, center);
+                border: 0;
+                background-color: $light-blue;
+                width: 20%;
+                height: 65%;
+                font-weight: 600;
+                cursor: pointer;
+                border-radius: 4px;
+            }
+        }
+
+        .address-div {
+            @include dp-flex(column, flex-start, center);
+            gap: 0;
+            width: 100%;
+            height: auto;
+
+            .addresses-inputs {
+                width: 100%;
+                height: 4rem;
+                padding: 0.5rem;
+                resize: none;
+            }
+
+            .address-div-btns {
+                @include dp-flex(row, space-between, center);
+                width: 100%;
+
+                button {
+                    width: 40%;
+                    height: 2rem;
+                    cursor: pointer;
+                    border: none;
+                    border-radius: 4px;
+                }
+            }
+        }
+    }
+
+
+    // MY ORDERS PAGE 
+
+
+    .my-orders-div {
+        @include dp-flex(column, flex-start, center);
+        gap: 2rem;
+        width: 100%;
+
+        .order-div {
+            @include dp-flex(column, flex-start, center);
+            width: 100%;
+            box-shadow: $shadow;
+            border-radius: 6px;
+            overflow: hidden;
+
+            .order-div-1 {
+                @include dp-flex(row, flex-start, center);
+                gap: 0.25rem;
+                width: 100%;
+                height: 5rem;
+                padding: 1rem;
+                background-color: rgba(204, 204, 204, 0.25);
+
+                hr {
+                    height: 100%;
+                }
+
+                p:nth-of-type(1) {
+                    span {
+                        font-weight: 600;
+                    }
+                }
+
+                p:nth-of-type(2) {
+                    span {
+                        font-weight: 600;
+
+                        &::after {
+                            content: '₺';
+                            padding-left: 4px;
+                        }
+                    }
+                }
+
+                p:nth-of-type(3) {
+                    span {
+                        font-weight: 600;
+                    }
+                }
+
+                label {
+                    @include dp-flex(column, center, center);
+                    margin-left: auto;
+                    justify-self: flex-end;
+                    border: 1px solid #ccc;
+                    padding: 0.4rem 0.8rem;
+                    border-radius: 4px;
+                    user-select: none;
+
+                    span {
+                        display: none;
+                    }
+                }
+            }
+
+            .order-div-2 {
+                @include dp-flex(column, flex-start, center);
+                width: 100%;
+                height: auto;
+
+                .order-product-div {
+                    @include dp-flex(row, flex-start, center);
+                    gap: 0.5rem;
+                    width: 100%;
+                    height: 7rem;
+                    padding: 0.75rem;
+
+                    img {
+                        height: auto;
+                        width: 10%;
+                    }
+
+                    .order-product-div-2 {
+                        @include dp-flex(column, flex-start, center);
+                        width: 100%;
+                        height: 100%;
+
+                        .order-product-div-title {
+                            @include dp-flex(row, flex-start, center);
+                            width: 100%;
+                            height: 40%;
+                        }
+
+                        div {
+                            @include dp-flex(row, space-between, center);
+                            width: 100%;
+                            height: 60%;
+
+                            p:nth-of-type(1)::after,
+                            p:nth-of-type(3)::after {
+                                content: '₺';
+                                padding-left: 0.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .order-details-cb {
+                display: none;
+
+                &:checked+.order-div-3 {
+                    @include dp-flex(column, flex-start, flex-start);
+                }
+            }
+
+            .order-div-3 {
+                //@include dp-flex(column, flex-start, flex-start);
+                display: none;
+                gap: 0.75rem;
+                width: 100%;
+                height: auto;
+                padding: 0.75rem;
+
+                hr {
+                    width: 100%;
+                }
+
+                p {
+                    font-weight: 600;
+                }
+
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+
+    // MY FAVORİTES PRODUCTS PAGE
+
+
+    .my-favorites-products-div {
+        width: 100%;
+
+        .my-favorites-products-div-2 {
+            width: 100%;
+
+            .favorite-product-div {
+                width: 100%;
+            }
+        }
+    }
+}
